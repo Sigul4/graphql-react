@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.category-bar{
+  background: pink;
+  color: black;
+  margin: 5px;
+  padding: 40px;
+}
+
+.good-bar{
+  background: #81dbf4;
+  color: black;
+  margin: 5px;
+  padding: 40px;
+}
