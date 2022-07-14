@@ -105,7 +105,7 @@ return(
 
     {status === 'PENDING'   &&  <><strong>Почекай, хлопчине!</strong><br/></>}
     {status === 'REJECTED'  &&  <><strong>ERROR</strong>: {error}<br/></>}
-    {status === 'FULFILLED' &&  <><strong>Payload</strong>: {payload.data.CategoryFind[0].name}<br/></>}
+    {status === 'FULFILLED' &&  <><strong>Category</strong>: {payload.data.CategoryFind[0].name}<br/></>}
     {status === 'FULFILLED' &&  <ul class="listOfSmartphones"> {payload.data.CategoryFind[0].goods.map( smartphone => 
                                   <li className='good-bar' key={smartphone._id}>📱{smartphone.name}<br/>
                                   <strong>💸 Price: </strong>      {smartphone.price}<br/>
