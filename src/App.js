@@ -1,10 +1,8 @@
-// import FetchFullContent from './FetchFullContent'
 import './App.css';
-import React, {useState} from 'react';
+import React from 'react';
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import {Provider, connect} from 'react-redux';
-// import { gql, useQuery } from '@apollo/client'
 
 
 function promiseReducer(state, {type, status, name, payload, error}){ 
@@ -105,12 +103,16 @@ return(
 
     {status === 'PENDING'   &&  <><strong>Почекай, хлопчине!</strong><br/></>}
     {status === 'REJECTED'  &&  <><strong>ERROR</strong>: {error}<br/></>}
-    {status === 'FULFILLED' &&  <><strong>Category</strong>: {payload.data.CategoryFind[0].name}<br/></>}
+    {status === 'FULFILLED' &&  <><strong>Payload</strong>: {payload.data.CategoryFind[0].name}<br/></>}
     {status === 'FULFILLED' &&  <ul class="listOfSmartphones"> {payload.data.CategoryFind[0].goods.map( smartphone => 
-                                  <li className='good-bar' key={smartphone._id}>📱{smartphone.name}<br/>
-                                  <strong>💸 Price: </strong>      {smartphone.price}<br/>
-                                  <img src='http://shop-roles.node.ed.asmer.org.ua/{smartphone.url}'/><br/>
-                                  <strong>🐷 Description: </strong>{smartphone.description}
+                                  
+                                  <li className='good-bar' key={smartphone._id}>
+                                    <img src={`http://shop-roles.node.ed.asmer.org.ua/${smartphone.images[0].url}`} alt=''/><br/>
+                                    <div className='data'>
+                                      <h1>📱{smartphone.name}</h1><br/>
+                                      <strong>💸 Price: </strong>   {smartphone.price}<br/>
+                                      <strong>🐷 Description: </strong>{smartphone.description}
+                                    </div>
                                   </li>
                                   )}
                                 </ul>}
