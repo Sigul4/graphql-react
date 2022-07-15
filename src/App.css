@@ -39,14 +39,25 @@
 
 .category-bar{
   background: pink;
-  color: black;
+  color: rgba(0, 0, 0, 0.883);
   margin: 5px;
   padding: 40px;
 }
 
 .good-bar{
+  display: flex;
   background: #81dbf4;
   color: black;
   margin: 5px;
   padding: 40px;
+}
+
+li{
+  list-style-type: none; 
+}
+
+img{
+  margin: 40px;
+  max-width: 100px;
+  border-radius: 12px;
 }
